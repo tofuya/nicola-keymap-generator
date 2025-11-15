@@ -114,7 +114,7 @@ module KarabinerConvertible
     { left_key => :left_thumb_active,
       right_key => :right_thumb_active }.map do |key, var|
       { type: :basic,
-        from: { key_code: normalize_source_key(key), modifiers: { optional: [:any] } },
+        from: { key_code: normalize_source_key(key) },
         to: [{ set_variable: { name: var, value: 1 } }],
         to_after_key_up: [{ set_variable: { name: var, value: 0 } }],
         to_if_alone: [{ key_code: normalize_source_key(key) }],
